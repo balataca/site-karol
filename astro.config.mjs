@@ -6,5 +6,12 @@ export default defineConfig({
   integrations: [tailwind()],
   site: 'https://balataca.github.io',
   base: '/site-karol',
+  i18n: {
+    locales: ['en', 'pt-br'],
+    defaultLocale: 'en',
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
 });
 

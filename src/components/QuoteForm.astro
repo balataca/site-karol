@@ -1,8 +1,8 @@
 ---
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getTranslations } from '../i18n/translations';
 
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const locale = Astro.currentLocale || 'en';
+const t = getTranslations(locale);
 ---
 <section id="quote" class="py-20 bg-gradient-to-br from-[#134074] to-[#8da9c4] px-4">
   <div class="max-w-3xl mx-auto">

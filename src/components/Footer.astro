@@ -1,9 +1,9 @@
 ---
 import { Mail } from '@lucide/astro';
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getTranslations } from '../i18n/translations';
 
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const locale = Astro.currentLocale || 'en';
+const t = getTranslations(locale);
 ---
 <footer class="bg-[#134074] text-white py-12 px-4">
   <div class="max-w-6xl mx-auto">

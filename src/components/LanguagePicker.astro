@@ -1,23 +1,36 @@
 ---
-import { languages } from '../i18n/ui';
-import { getLangFromUrl, useTranslatedPath } from '../i18n/utils';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { languageLabels } from '../i18n/translations';
 
-const lang = getLangFromUrl(Astro.url);
-const translatePath = useTranslatedPath(lang);
+const currentLocale = Astro.currentLocale || 'en';
 ---
-<div class="flex items-center gap-2">
-  {Object.entries(languages).map(([l, label]) => (
+<div class="flex items-center gap-2 bg-gray-900/80 backdrop-blur-sm px-3 py-2 rounded-xl shadow-lg border border-gray-700/50">
+  {Object.entries(languageLabels).map(([locale, label]) => (
     <a 
-      href={translatePath('/', l)}
+      href={getRelativeLocaleUrl(locale, '/')}
       class={`px-3 py-1 rounded-lg text-sm font-medium transition-colors ${
-        lang === l 
+        currentLocale === locale 
           ? 'bg-white/20 text-white' 
           : 'text-gray-300 hover:text-white hover:bg-white/10'
       }`}
       aria-label={`Switch to ${label}`}
+      data-lang-switch={locale}
     >
       {label}
     </a>
   ))}
 </div>
+
+<script>
+  import { saveLocale } from '../utils/detect-language';
+  
+  document.querySelectorAll('[data-lang-switch]').forEach(link => {
+    link.addEventListener('click', () => {
+      const locale = link.getAttribute('data-lang-switch');
+      if (locale) {
+        saveLocale(locale);
+      }
+    });
+  });
+</script>
 

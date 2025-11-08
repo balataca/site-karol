@@ -1,11 +1,4 @@
-export const languages = {
-  en: 'English',
-  'pt-br': 'Português',
-};
-
-export const defaultLang = 'en';
-
-export const ui = {
+export const translations = {
   en: {
     'nav.home': 'Home',
     'nav.about': 'About',
@@ -98,5 +91,17 @@ export const ui = {
   },
 } as const;
 
-export const showDefaultLang = false;
+export const languageLabels = {
+  en: 'English',
+  'pt-br': 'Português',
+} as const;
+
+export function getTranslations(locale: string | undefined) {
+  const currentLocale = (locale && locale in translations) ? locale as keyof typeof translations : 'en';
+  const t = translations[currentLocale];
+  
+  return function(key: keyof typeof translations['en']) {
+    return t[key] || translations['en'][key];
+  };
+}
 

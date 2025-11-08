@@ -1,10 +1,10 @@
 ---
 import Service from './Service.astro';
 import { FileText, GraduationCap, User, Briefcase, Heart, Clock } from '@lucide/astro';
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getTranslations } from '../i18n/translations';
 
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const locale = Astro.currentLocale || 'en';
+const t = getTranslations(locale);
 ---
 <section id="services" class="py-20 bg-[#eef4ed] px-4">
   <div class="max-w-6xl mx-auto">
