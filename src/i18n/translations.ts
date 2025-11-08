@@ -1,7 +1,5 @@
 export const translations = {
   en: {
-    'nav.home': 'Home',
-    'nav.about': 'About',
     'nav.services': 'Services',
     'nav.testimonials': 'Testimonials',
     'nav.quote': 'Get a Quote',
@@ -45,8 +43,6 @@ export const translations = {
     'footer.copyright': 'All rights reserved.',
   },
   'pt-br': {
-    'nav.home': 'Início',
-    'nav.about': 'Sobre',
     'nav.services': 'Serviços',
     'nav.testimonials': 'Depoimentos',
     'nav.quote': 'Solicitar Orçamento',
