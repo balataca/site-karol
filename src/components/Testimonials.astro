@@ -1,0 +1,43 @@
+---
+import Testimonial from './Testimonial.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<section id="testimonials" class="py-20 bg-[#eef4ed] px-4">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+        {t('testimonials.title')}
+      </h2>
+      <p class="text-xl text-gray-600">
+        {t('testimonials.subtitle')}
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <Testimonial 
+        quote="Karol provided exceptional service for my academic document translation. The process was smooth, professional, and completed ahead of schedule. Highly recommended!"
+        name="Sarah Martinez"
+        initials="SM"
+        role="Academic Professional"
+      />
+
+      <Testimonial 
+        quote="I needed urgent translation for my business contract. Karol was responsive, professional, and delivered exactly what I needed. The quality was outstanding!"
+        name="James Davis"
+        initials="JD"
+        role="Business Owner"
+      />
+
+      <Testimonial 
+        quote="Working with Karol was a pleasure. She translated my personal documents with great attention to detail and made the whole process stress-free. Thank you!"
+        name="Maria Chen"
+        initials="MC"
+        role="Client"
+      />
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,36 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#8da9c4] to-[#134074] px-4 py-16">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <div class="text-center md:text-left">
+      <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
+        {t('hero.greeting')} <span class="text-[#eef4ed]">{t('hero.name')}</span>
+      </h1>
+      <p class="text-2xl md:text-3xl text-white mb-8 font-light drop-shadow-md">
+        {t('hero.tagline')}
+      </p>
+      <p class="text-lg text-white/90 mb-8 leading-relaxed drop-shadow-sm">
+        {t('hero.description')}
+      </p>
+      <a href="#quote" class="inline-block bg-[#134074] text-white px-8 py-4 rounded-3xl text-lg font-semibold hover:bg-[#0b2545] transition-colors shadow-lg hover:shadow-xl">
+        {t('hero.cta')}
+      </a>
+    </div>
+    <div class="flex justify-center">
+      <div class="relative">
+        <div class="absolute inset-0 bg-[#8da9c4] rounded-3xl transform rotate-6"></div>
+        <img 
+          src="/karol.jpg" 
+          alt="Karol Biscardi - Professional Sworn Translator"
+          class="relative rounded-3xl shadow-2xl w-full max-w-md object-cover"
+          onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22500%22%3E%3Crect fill=%22%238da9c4%22 width=%22400%22 height=%22500%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2224%22 fill=%22%230b2545%22%3EKarol Biscardi%3C/text%3E%3C/svg%3E'"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+

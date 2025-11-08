@@ -1,0 +1,59 @@
+---
+import Service from './Service.astro';
+import { FileText, GraduationCap, User, Briefcase, Heart, Clock } from '@lucide/astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<section id="services" class="py-20 bg-[#eef4ed] px-4">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+        {t('services.title')}
+      </h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        {t('services.subtitle')}
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <Service 
+        title={t('services.legal.title')}
+        description={t('services.legal.description')}
+        icon={FileText}
+      />
+
+      <Service 
+        title={t('services.academic.title')}
+        description={t('services.academic.description')}
+        icon={GraduationCap}
+      />
+
+      <Service 
+        title={t('services.personal.title')}
+        description={t('services.personal.description')}
+        icon={User}
+      />
+
+      <Service 
+        title={t('services.business.title')}
+        description={t('services.business.description')}
+        icon={Briefcase}
+      />
+
+      <Service 
+        title={t('services.medical.title')}
+        description={t('services.medical.description')}
+        icon={Heart}
+      />
+
+      <Service 
+        title={t('services.fast.title')}
+        description={t('services.fast.description')}
+        icon={Clock}
+      />
+    </div>
+  </div>
+</section>
+

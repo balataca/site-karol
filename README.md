@@ -1,43 +1,80 @@
-# Astro Starter Kit: Minimal
+# Karol Biscardi - Sworn Translator Website
 
-```sh
-pnpm create astro@latest -- --template minimal
+A modern, friendly landing page for sworn translator Karol Biscardi, built with Astro, TypeScript, and Tailwind CSS.
+
+## Features
+
+- 🎨 Modern design with pastel color palette
+- 📱 Fully responsive
+- ⚡ Fast and optimized with Astro
+- 🎯 All required sections: Hero, Services, Quote Form, Testimonials, Footer
+
+## Tech Stack
+
+- **Astro** - Modern web framework
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Utility-first CSS framework
+- **pnpm** - Fast, disk space efficient package manager
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- pnpm installed globally (`npm install -g pnpm`)
+
+### Installation
+
+1. Install dependencies:
+```bash
+pnpm install
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+2. Start the development server:
+```bash
+pnpm dev
+```
 
-## 🚀 Project Structure
+3. Open your browser to `http://localhost:4321`
 
-Inside of your Astro project, you'll see the following folders and files:
+### Build for Production
 
-```text
+```bash
+pnpm build
+```
+
+The built site will be in the `dist/` directory.
+
+### Preview Production Build
+
+```bash
+pnpm preview
+```
+
+## Project Structure
+
+```
 /
 ├── public/
+│   └── favicon.svg
 ├── src/
+│   ├── layouts/
+│   │   └── Layout.astro
 │   └── pages/
 │       └── index.astro
+├── astro.config.mjs
+├── tailwind.config.mjs
+├── tsconfig.json
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Customization
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- **Colors**: Edit the pastel color palette in `tailwind.config.mjs`
+- **Content**: Update text and sections in `src/pages/index.astro`
+- **Styling**: Modify Tailwind classes or add custom CSS
 
-Any static assets, like images, can be placed in the `public/` directory.
+## License
 
-## 🧞 Commands
+MIT
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
