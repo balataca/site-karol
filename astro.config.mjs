@@ -4,8 +4,7 @@ import tailwind from '@astrojs/tailwind';
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind()],
-  site: 'https://balataca.github.io',
-  base: '/site-karol',
+  site: 'https://karolbiscardi.com',
   i18n: {
     locales: ['en', 'pt-br'],
     defaultLocale: 'en',
