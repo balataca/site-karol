@@ -4,13 +4,13 @@ import { getTranslations } from '../i18n/translations';
 const locale = Astro.currentLocale || 'en';
 const t = getTranslations(locale);
 ---
-<section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#8da9c4] to-[#134074] px-4 py-16">
+<section class="min-h-screen flex items-start md:items-center md:justify-center bg-[#134074] bg-cover bg-center bg-[url(/site-karol/karol.png)] bg-blend-soft-light px-4 py-24 md:py-16">
   <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
     <div class="text-center md:text-left">
       <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
         👋 {t('hero.greeting')} <span class="text-[#eef4ed]">{t('hero.name')}</span>
       </h1>
-      <p class="text-2xl md:text-3xl text-white mb-8 font-light drop-shadow-md max-w-full md:w-[36rem] min-h-[3rem] md:min-h-[5rem]">
+      <p class="text-2xl md:text-3xl text-white mb-8 font-light drop-shadow-md max-w-full md:w-[36rem] min-h-[4rem] md:min-h-[5rem]">
         <span id="typing-text" class="inline"></span>
         <span class="inline-block w-[2px] h-[1.5rem] bg-white align-middle animate-pulse" id="typing-cursor"></span>
       </p>
@@ -25,18 +25,7 @@ const t = getTranslations(locale);
         </svg>
         {t('hero.cta')}
       </a>
-    </div>
-    <div class="flex justify-center">
-      <div class="relative">
-        <div class="absolute inset-0 bg-[#8da9c4] rounded-3xl transform rotate-6"></div>
-        <img 
-          src="/site-karol/karol.png"
-          alt="Karol Biscardi - Professional Sworn Translator"
-          class="relative rounded-3xl shadow-2xl w-full max-w-md object-cover"
-          onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22500%22%3E%3Crect fill=%22%238da9c4%22 width=%22400%22 height=%22500%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2224%22 fill=%22%230b2545%22%3EKarol Biscardi%3C/text%3E%3C/svg%3E'"
-        />
-      </div>
-    </div>
+    </div>    
   </div>
 </section>
 
